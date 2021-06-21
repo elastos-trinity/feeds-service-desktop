@@ -1,0 +1,19 @@
+{
+  "title": "フィーズサービス",
+  "description": {
+    "publisher": "出版アカウント",
+    "power": "Powered by Elastos",
+    "dialogtitle": "出版アカウントQRコード"
+  },
+  "button": {
+    "link": "リンク",
+    "con": "接続",
+    "dis": "切断"
+  },
+  "server": {
+    "onlinestatus": "オンラインです",
+    "offlinestatus": "オフラインです",
+    "qr": "スキャンしてください",
+    "action" : "サーバーの起動/停止に切替"
+}
+}

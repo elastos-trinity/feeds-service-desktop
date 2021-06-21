@@ -1,0 +1,10 @@
+{
+  "description": {
+    "dialjogtitle": "description.dialjogtitle"
+  },
+  "server": {
+    "onlinestatus": "server.onlinestatus",
+    "qr": "server.qr",
+    "action": "server.action"
+  }
+}

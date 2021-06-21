@@ -1,0 +1,19 @@
+{
+  "title": "Feeds Service",
+  "description": {
+    "publisher": "Publisher Account",
+    "power": "Powered by Elastos",
+    "dialogtitle": "Publisher Account QR Code"
+  },
+  "button": {
+    "link": "Link",
+    "con": "Connect",
+    "dis": "Disconnect"
+  },
+  "server": {
+    "onlinestatus": "Server is online",
+    "offlinestatus": "Server is offline",
+    "qr": "Scan QR code to bind",
+    "action" : "Toggle to start/stop server"
+}
+}

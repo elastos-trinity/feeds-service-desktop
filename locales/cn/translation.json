@@ -1,0 +1,20 @@
+{
+  "title": "Feeds服务",
+  "description": {
+    "publisher": "出版帐户",
+    "power": "Powered by Elastos",
+    "dialogtitle": "出版帐户二维码"
+  },
+  "button": {
+    "link": "同步",
+    "con": "连接",
+    "dis": "断开"
+  },
+  "server": {
+    "onlinestatus": "Server is online",
+    "offlinestatus": "Server is offline",
+    "qr": "Scan QR code to bind",
+    "action" : "Toggle to start/stop server"
+}
+}
+
