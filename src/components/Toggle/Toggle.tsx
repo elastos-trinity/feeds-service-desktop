@@ -25,13 +25,16 @@ export default function Toggle() {
    }
 
    const getData = ()=>{
+
      setLoading(true)
-     fetch("https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats")
-     .then(response =>response.json())
-     .then(responseData =>{
-       console.log(responseData.data.total_cases)
-       setData(responseData.data.total_cases)
-       setLoading(false)
+     fetch("http://localhost:10080/qrcode")
+     .then(response => {
+        return response.json()
+    }).then(responseData =>{
+        setData(responseData.feedsURL)
+        setLoading(false)
+     }).catch (error => {
+        console.log("error:", error)
      })
    }
 
