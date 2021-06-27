@@ -85,7 +85,8 @@
       "./assets/**"
     ],
     "extraFiles": [
-      "locales"
+      "locales",
+      "services"
     ],
     "publish": {
       "provider": "github",
