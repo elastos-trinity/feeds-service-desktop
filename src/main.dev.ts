@@ -152,11 +152,10 @@ app.on('activate', () => {
 });
 
 const exec = require('child_process').exec
-let cmdStr = 'feedsd -c feedsd.conf'
-let cmdPath = "services"
+let cmdStr = './feedsd -c feedsd.conf'
 let workerProcess
 
-function runExec () {
+function runExec (cmdPath) {
   workerProcess = exec(cmdStr, {cwd: cmdPath})
   workerProcess.stdout.on('data', function (data) {
     console.log(data)
@@ -173,6 +172,10 @@ function runExec () {
 
 app.on('ready', function(){
   console.log("Start to load backend service ....");
-  runExec()
+  const path = require("path");
+  const cmdPath = path.join(app.getAppPath(), "../services");
+  console.log("cmd path: ", cmdPath);
+
+  runExec(cmdPath)
 })
 
