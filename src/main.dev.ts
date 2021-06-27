@@ -150,3 +150,32 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow();
 });
+
+// const exec = require('child_process').exec
+// let cmdStr = './feedsd -c feedsd.conf'
+// let cmdPath = "/Users/user/feeds-windows/feeds-service/build/windows/dist/bin"
+// let workerProcess
+
+// function runExec () {
+//   console.log(">>>>>>>runExec");
+//   workerProcess = exec(cmdStr, {cwd: cmdPath})
+//   console.log("<<<<<<<<runExec");
+//   workerProcess.stdout.on('data', function (data) {
+//     console.log(data)
+//   })
+
+//   // 打印错误的后台可执行程序输出
+//   workerProcess.stderr.on('data', function (data) {
+//     console.log(data)
+//   })
+
+//   // 退出之后的输出
+//   workerProcess.on('close', function (code) {
+//     console.log(code)
+//   })
+// }
+
+// app.on('ready', function(){
+//   console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>")
+//   runExec()
+// })
