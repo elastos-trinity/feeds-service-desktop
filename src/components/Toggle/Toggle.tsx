@@ -7,7 +7,7 @@ import Loader from 'react-loader-spinner';
 import { Grid } from '@material-ui/core';
 import { useTranslation,Translation } from 'react-i18next';
 import i18next from 'i18next';
-import styles from './Toggle.scss';
+import styles from './Toggle.module.scss';
 import QR from '../QR/QR';
 
 export default function Toggle() {
