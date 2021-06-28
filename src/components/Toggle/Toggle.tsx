@@ -20,28 +20,24 @@ export default function Toggle() {
     setChecked(nextChecked);
   };
 
-   const handleChange = nextChecked => {
-      setChecked(nextChecked);
-   }
+  const getData = ()=>{
 
-   const getData = ()=>{
+    setLoading(true)
+    fetch("http://localhost:10080/qrcode")
+    .then(response => {
+      return response.json()
+  }).then(responseData =>{
+      setData(responseData.feedsURL)
+      setLoading(false)
+    }).catch (error => {
+      console.log("error:", error)
+    })
+  }
 
-     setLoading(true)
-     fetch("http://localhost:10080/qrcode")
-     .then(response => {
-        return response.json()
-    }).then(responseData =>{
-        setData(responseData.feedsURL)
-        setLoading(false)
-     }).catch (error => {
-        console.log("error:", error)
-     })
-   }
-
-   useEffect(() => {
-     if(checked){
-     getData()
-          }
+  useEffect(() => {
+    if(checked){
+    getData()
+        }
   }, [checked])
 
   return (
