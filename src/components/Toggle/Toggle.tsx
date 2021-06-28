@@ -1,35 +1,24 @@
-import React, { useEffect, useState }  from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import QRCode from 'qrcode.react';
+import React, { useEffect, useState } from 'react';
 import Switch from 'react-switch';
 import Tooltip from '@material-ui/core/Tooltip';
 import Loader from 'react-loader-spinner';
 import { Grid } from '@material-ui/core';
-import { useTranslation,Translation } from 'react-i18next';
-import i18next from 'i18next';
+// import { useTranslation, Translation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+// import i18next from 'i18next';
 import styles from './Toggle.module.scss';
 import QR from '../QR/QR';
 
 export default function Toggle() {
+  // const { t, i18n } = useTranslation();
+  const { t }: { t: any } = useTranslation();
+  const [checked, setChecked] = useState<boolean>(false);
+  const [data, setData] = useState<string>('');
+  const [isLoading, setLoading] = useState<boolean>(false);
 
-  const { t, i18n } = useTranslation();
-  const [checked, setChecked] = useState(false);
-  const [data, setData] = useState('')
-  const [isLoading, setLoading] = useState(false)
-
-
-  // const handleChange = nextChecked => {
-
-  //   if (nextChecked) {fetch("https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats")
-  //    // fetch("http://localhost:10080/")
-  //    .then(response => response.json())
-  //    .then(responseData => {
-  //      console.log(responseData.data.total_cases)
-  //      setData(responseData.data.total_cases)
-  //  })
-  //   }
-  //    setChecked(nextChecked);
-  //  };
+  const handleChange = (nextChecked: boolean) => {
+    setChecked(nextChecked);
+  };
 
    const handleChange = nextChecked => {
       setChecked(nextChecked);
