@@ -29,6 +29,7 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
+
     backend: {
       // path where resources get loaded from
       loadPath: './locales/{{lng}}/{{ns}}.json',
@@ -41,7 +42,7 @@ i18n
     },
     saveMissing: true,
     react: {
-      wait: false,
+      useSuspense: true,
     },
   });
 

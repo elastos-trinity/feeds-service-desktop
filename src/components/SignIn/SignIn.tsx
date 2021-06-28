@@ -3,15 +3,17 @@ import { Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
-import { useTranslation, Translation } from 'react-i18next';
-import i18next from 'i18next';
+// import { useTranslation, Translation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+// import i18next from 'i18next';
 import styles from './SignIn.module.scss';
 import icon from '../../../assets/feeds-logo.svg';
 import logo from '../../../assets/logos/ic_elastos.png';
 import Toggle from '../Toggle/Toggle';
 
 const SignIn = () => {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
+  const { t }: { t: any } = useTranslation();
   return (
     <div>
       <Helmet>

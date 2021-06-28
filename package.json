@@ -84,6 +84,9 @@
     "extraResources": [
       "./assets/**"
     ],
+    "extraFiles": [
+      "locales"
+    ],
     "publish": {
       "provider": "github",
       "owner": "electron-react-boilerplate",
