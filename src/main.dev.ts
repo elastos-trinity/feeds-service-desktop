@@ -135,14 +135,6 @@ app.whenReady().then(() => {
   tray.setContextMenu(contextMenu);
 });
 
-app.on('window-all-closed', () => {
-  // Respect the OSX convention of having the application in memory even
-  // after all windows have been closed
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
 app.whenReady().then(createWindow).catch(console.log);
 
 app.on('activate', () => {
@@ -151,31 +143,44 @@ app.on('activate', () => {
   if (mainWindow === null) createWindow();
 });
 
-const exec = require('child_process').exec
-let cmdStr = './feedsd -c feedsd.conf'
-let workerProcess
+const cmdStr = './feedsd -c feedsd.conf';
+var workerProcess;
 
-function runExec (cmdPath) {
-  workerProcess = exec(cmdStr, {cwd: cmdPath})
-  workerProcess.stdout.on('data', function (data) {
-    console.log(data)
-  })
+function runExec() {
+  const { exec } = require('child_process');
+  const path1 = require('path');
+  const cmdPath = path1.join(app.getAppPath(), '../services');
 
-  workerProcess.stderr.on('data', function (data) {
-    console.log(data)
-  })
+  console.log('application path: ', app.getAppPath());
+  console.log('cmd-path: ', cmdPath);
 
-  workerProcess.on('close', function (code) {
-    console.log(code)
-  })
+  workerProcess = exec(cmdStr, { cwd: cmdPath });
+  workerProcess.stdout.on('data', (data: string) => {
+    console.log(data);
+  });
+
+  workerProcess.stderr.on('data', (data: string) => {
+    console.log(data);
+  });
+
+  workerProcess.on('close', (data: string) => {
+    console.log(data);
+  });
 }
 
-app.on('ready', function(){
-  console.log("Start to load backend service ....");
-  const path = require("path");
-  const cmdPath = path.join(app.getAppPath(), "../services");
-  console.log("cmd path: ", cmdPath);
+app.on('ready', () => {
+  console.log('Start to load backend service ....');
+  runExec();
+});
 
-  runExec(cmdPath)
-})
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
 
+app.on('will-quit', () => {
+  // Respect the OSX convention of having the application in memory even
+  // after all windows have been closed
+  workerProcess.kill('SIGINT');
+});
