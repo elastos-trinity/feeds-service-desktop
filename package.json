@@ -82,11 +82,11 @@
       "output": "release"
     },
     "extraResources": [
-      "./assets/**"
+      "./assets/**",
+      "./services/**"
     ],
     "extraFiles": [
-      "locales",
-      "services"
+      "locales"
     ],
     "publish": {
       "provider": "github",
