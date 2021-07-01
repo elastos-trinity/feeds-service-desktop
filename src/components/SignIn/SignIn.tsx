@@ -11,6 +11,7 @@ import Toggle from '../Toggle/Toggle';
 
 const SignIn = () => {
   const { t } = useTranslation();
+
   return (
     <div>
       <Helmet>
@@ -31,14 +32,14 @@ const SignIn = () => {
             alignContent="center"
           >
             <img width="200px" alt="icon" src={icon} />
-            <h1>{t('title')}</h1>
+            <h1>{'Feeds Service' /* t('title') */}</h1>
           </Grid>
         </div>
         <div className={styles.glassContainer}>
           <div className={styles.cover}>
             <h3 className={styles.userLogin}>
               <FontAwesomeIcon icon={faUserCircle} className="icon" />
-              {t('description.publisher')}
+              {'Publisher Account' /* {t('description.publisher')} */}
             </h3>
             <div className={styles.welcome} />
             <Grid
@@ -60,7 +61,7 @@ const SignIn = () => {
           className={styles.footer}
         >
           <h5>
-            {t('description.power')}
+            {'Powered by Elastos' /* t('description.power') */}
             <img
               width="15px"
               alt="logo"

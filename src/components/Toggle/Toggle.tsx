@@ -29,7 +29,8 @@ export default function Toggle() {
         setLoading(false);
       })
       .catch((error) => {
-        //console.log('error:', error);
+        // eslint-disable-next-line no-console
+        console.error('error:', error);
       });
   };
 
@@ -42,7 +43,10 @@ export default function Toggle() {
   return (
     <div>
       <div className={styles.toggle}>
-        <Tooltip title={t('server.action')} arrow>
+        <Tooltip
+          title={'Toggle to start/stop server' /* t('server.action') */}
+          arrow
+        >
           <Grid
             container
             direction="column"
