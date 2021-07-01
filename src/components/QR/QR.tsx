@@ -2,9 +2,7 @@ import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faServer } from '@fortawesome/free-solid-svg-icons';
 import QRCode from 'qrcode.react';
-// import { useTranslation, Translation } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
-// import i18next from 'i18next';
 
 interface QRProps {
   showQR: boolean;
@@ -12,8 +10,7 @@ interface QRProps {
 }
 
 const QR: FC<QRProps> = ({ showQR, data }) => {
-  // const { t, i18n } = useTranslation();
-  const { t }: { t: any } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div>
       {showQR ? (
@@ -26,10 +23,9 @@ const QR: FC<QRProps> = ({ showQR, data }) => {
             id="qrc"
             value={data}
             size={150}
-            bgColor={'#fff'}
-            fgColor={'#000'}
-            level={'H'}
-            includeMargin={true}
+            bgColor="#fff"
+            fgColor="#000"
+            level="H"
           />
           <h5>{t('server.qr')}</h5>
         </div>
