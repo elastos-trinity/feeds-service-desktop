@@ -17,7 +17,7 @@ const QR: FC<QRProps> = ({ showQR, data }) => {
         <div>
           <h5>
             <FontAwesomeIcon icon={faServer} className="icon" color="#3ec928" />
-            {t('server.onlinestatus')}
+            {'Server is online' /* t('server.onlinestatus') */}
           </h5>
           <QRCode
             id="qrc"
@@ -27,13 +27,13 @@ const QR: FC<QRProps> = ({ showQR, data }) => {
             fgColor="#000"
             level="H"
           />
-          <h5>{t('server.qr')}</h5>
+          <h5>{'Scan QR code to bind' /* t('server.qr') */}</h5>
         </div>
       ) : (
         <div>
           <h5>
             <FontAwesomeIcon icon={faServer} className="icon" color="#FF4C4C" />
-            {t('server.offlinestatus')}
+            {'Server is onffline' /* t('server.offlinestatus') */}
           </h5>
         </div>
       )}
