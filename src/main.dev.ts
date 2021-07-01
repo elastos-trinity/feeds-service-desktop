@@ -15,6 +15,7 @@ import { app, BrowserWindow, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
+import './i18n';
 
 export default class AppUpdater {
   constructor() {
@@ -117,7 +118,6 @@ const createWindow = async () => {
  * Add event listeners...
  */
 
-//Tray
 const { Menu, Tray } = require('electron');
 
 let tray = null;
@@ -126,7 +126,7 @@ app.whenReady().then(() => {
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Quit',
-      click: function () {
+      click() {
         app.quit();
       },
     },

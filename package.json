@@ -83,10 +83,8 @@
     },
     "extraResources": [
       "./assets/**",
-      "./services/**"
-    ],
-    "extraFiles": [
-      "locales"
+      "./services/**",
+      "./locales/**"
     ],
     "publish": {
       "provider": "github",
