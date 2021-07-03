@@ -19,7 +19,7 @@ export default function Toggle() {
 
   const getData = () => {
     setLoading(true);
-    fetch('http://localhost:10080/qrcode')
+    fetch('http://localhost:10018/qrcode')
       .then((response) => {
         return response.json();
       })
