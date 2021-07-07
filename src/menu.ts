@@ -171,7 +171,7 @@ export default class MenuBuilder {
               'https://github.com/elastos-trinity/feeds-service-desktop#readme'
             );
           },
-        }
+        },
       ],
     };
 
