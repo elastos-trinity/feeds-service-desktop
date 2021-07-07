@@ -1,7 +1,7 @@
 {
   "name": "feeds-service",
-  "productName": "Feeds-Service",
-  "description": "Feeds service desktop application on windows and macOS platforms",
+  "productName": "Feeds Service",
+  "description": "Decentralized social platform application where users remain in full control of their own data",
   "scripts": {
     "build": "concurrently \"yarn build:main\" \"yarn build:renderer\"",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.babel.js",
@@ -30,7 +30,7 @@
     ]
   },
   "build": {
-    "productName": "Feeds-Service",
+    "productName": "Feeds Service",
     "appId": "io.trinity-tech.FeedsService",
     "files": [
       "dist/",
@@ -88,14 +88,18 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "feeds-service-desktop",
+      "repo": "feeds-service-desktop"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elastos-trinity/feeds-service-desktop.git"
   },
   "author": {
     "name": "Feeds team",
-    "email": "contact@trinity-tech.io",
-    "url": "https://www.trinity-feeds.app/"
+    "email": "contract@trinity-tech.io",
+    "url": "https://trinity-tech.io"
   },
   "license": "MIT",
   "bugs": {
@@ -103,10 +107,16 @@
   },
   "keywords": [
     "electron",
-    "elastos",
-    "feeds"
+    "boilerplate",
+    "react",
+    "typescript",
+    "ts",
+    "sass",
+    "webpack",
+    "hot",
+    "reload"
   ],
-  "homepage": "https://www.trinity-feeds.app/",
+  "homepage": "https://www.trinity-feeds.app",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {

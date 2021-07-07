@@ -2,7 +2,7 @@
   "name": "Feeds-Service",
   "productName": "Feeds-Service",
   "version": "2.0.0",
-  "description": "Feeds service desktop application on windows/macOS platforms",
+  "description": "Decentralized social platform application where users remain in full control of their own data",
   "main": "./main.prod.js",
   "author": {
     "name": "Feeds team",
