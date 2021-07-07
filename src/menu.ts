@@ -52,19 +52,20 @@ export default class MenuBuilder {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   buildDarwinTemplate(): MenuItemConstructorOptions[] {
     const subMenuAbout: DarwinMenuItemConstructorOptions = {
-      label: 'Electron',
+      label: 'Feeds Service',
       submenu: [
         {
-          label: 'About ElectronReact',
+          label: 'About Feeds-Service',
           selector: 'orderFrontStandardAboutPanel:',
         },
         { type: 'separator' },
         { label: 'Services', submenu: [] },
         { type: 'separator' },
         {
-          label: 'Hide ElectronReact',
+          label: 'Hide Feeds Service',
           accelerator: 'Command+H',
           selector: 'hide:',
         },
@@ -84,6 +85,7 @@ export default class MenuBuilder {
         },
       ],
     };
+    /*
     const subMenuEdit: DarwinMenuItemConstructorOptions = {
       label: 'Edit',
       submenu: [
@@ -126,6 +128,7 @@ export default class MenuBuilder {
         },
       ],
     };
+
     const subMenuViewProd: MenuItemConstructorOptions = {
       label: 'View',
       submenu: [
@@ -151,35 +154,24 @@ export default class MenuBuilder {
         { label: 'Bring All to Front', selector: 'arrangeInFront:' },
       ],
     };
+    */
     const subMenuHelp: MenuItemConstructorOptions = {
       label: 'Help',
       submenu: [
         {
           label: 'Learn More',
           click() {
-            shell.openExternal('https://electronjs.org');
+            shell.openExternal('https://trinity-feeds.app');
           },
         },
         {
           label: 'Documentation',
           click() {
             shell.openExternal(
-              'https://github.com/electron/electron/tree/master/docs#readme'
+              'https://github.com/elastos-trinity/feeds-service-desktop#readme'
             );
           },
-        },
-        {
-          label: 'Community Discussions',
-          click() {
-            shell.openExternal('https://www.electronjs.org/community');
-          },
-        },
-        {
-          label: 'Search Issues',
-          click() {
-            shell.openExternal('https://github.com/electron/electron/issues');
-          },
-        },
+        }
       ],
     };
 
@@ -192,8 +184,10 @@ export default class MenuBuilder {
     return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
   }
 
+  // eslint-disable-next-line class-methods-use-this
   buildDefaultTemplate() {
     const templateDefault = [
+      /*
       {
         label: '&File',
         submenu: [
@@ -252,6 +246,7 @@ export default class MenuBuilder {
                 },
               ],
       },
+      */
       {
         label: 'Help',
         submenu: [
