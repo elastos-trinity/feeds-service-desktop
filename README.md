@@ -1,4 +1,4 @@
-# Feeds Service Destkop
+# Feeds Service Desktop
 
 [![Build Status][github-actions-status]][github-actions-url]
 

@@ -143,8 +143,17 @@ app.on('activate', () => {
   if (mainWindow === null) createWindow();
 });
 
-const cmdStr = './feedsd -c feedsd.conf';
-var workerProcess;
+let cmdStr: string;
+if (process.platform === 'win32') {
+  cmdStr = 'feedsd.exe -c feedsd.conf';
+} else {
+  cmdStr = './feedsd -c feedsd.conf';
+}
+
+console.log('process.platform: ', process.platform);
+console.log('process.arch: ', process.arch);
+
+let workerProcess: any;
 
 function runExec() {
   const { exec } = require('child_process');
