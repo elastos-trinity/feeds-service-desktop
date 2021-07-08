@@ -175,13 +175,15 @@ export default class MenuBuilder {
       ],
     };
 
-    const subMenuView =
+    /* const subMenuView =
       process.env.NODE_ENV === 'development' ||
       process.env.DEBUG_PROD === 'true'
         ? subMenuViewDev
         : subMenuViewProd;
+    */
 
-    return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
+    // return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
+    return [subMenuAbout, subMenuHelp];
   }
 
   // eslint-disable-next-line class-methods-use-this
