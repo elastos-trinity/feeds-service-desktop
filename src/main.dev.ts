@@ -145,7 +145,8 @@ app.on('activate', () => {
 
 let cmdStr: string;
 if (process.platform === 'win32') {
-  cmdStr = 'feedsd.exe -c feedsd.conf';
+  const dataPath = `${app.getPath('appData')}\\feeds-service`;
+  cmdStr = `feedsd.exe -c feedsd.conf --data-dir=${dataPath}`;
 } else {
   cmdStr = './feedsd -c feedsd.conf';
 }
