@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faServer } from '@fortawesome/free-solid-svg-icons';
+import { faServer, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import QRCode from 'qrcode.react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,8 +16,8 @@ const QR: FC<QRProps> = ({ showQR, data }) => {
       {showQR ? (
         <div>
           <h5>
-            <FontAwesomeIcon icon={faServer} className="icon" color="#3ec928" />
-            {'Server is online' /* t('server.onlinestatus') */}
+            <FontAwesomeIcon icon={faQrcode} className="icon" color="#FF4C4C" />
+            {'Hide QR Code' /* t('server.onlinestatus') */}
           </h5>
           <QRCode
             id="qrc"
@@ -32,8 +32,8 @@ const QR: FC<QRProps> = ({ showQR, data }) => {
       ) : (
         <div>
           <h5>
-            <FontAwesomeIcon icon={faServer} className="icon" color="#FF4C4C" />
-            {'Server is onffline' /* t('server.offlinestatus') */}
+            <FontAwesomeIcon icon={faQrcode} className="icon" color="#3ec928" />
+            {'Show QR Code' /* t('server.offlinestatus') */}
           </h5>
         </div>
       )}
