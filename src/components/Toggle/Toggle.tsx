@@ -6,14 +6,12 @@ import { Grid } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import styles from './Toggle.module.scss';
 import QR from '../QR/QR';
-import kill from 'kill-port';
 
 export default function Toggle() {
   const { t } = useTranslation();
   const [checked, setChecked] = useState<boolean>(false);
   const [data, setData] = useState<string>('');
   const [isLoading, setLoading] = useState<boolean>(false);
-  const port = 10018;
 
   const handleChange = (nextChecked: boolean) => {
     setChecked(nextChecked);
@@ -39,11 +37,6 @@ export default function Toggle() {
   useEffect(() => {
     if (checked) {
       getData();
-    } else {
-      setTimeout(() => {
-        // Currently you can kill ports running on TCP or UDP protocols
-        kill(port, 'tcp').then(console.log).catch(console.log);
-      }, 1000);
     }
   }, [checked]);
 
@@ -51,7 +44,7 @@ export default function Toggle() {
     <div>
       <div className={styles.toggle}>
         <Tooltip
-          title={'Toggle to start/stop server' /* t('server.action') */}
+          title={'Toggle to show/hide QR Code' /* t('server.action') */}
           arrow
         >
           <Grid

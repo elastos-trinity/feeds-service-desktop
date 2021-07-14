@@ -16,6 +16,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import './i18n';
+import kill from 'kill-port';
 
 export default class AppUpdater {
   constructor() {
@@ -184,9 +185,13 @@ app.on('ready', () => {
 });
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+  // if (process.platform !== 'darwin') {
+  //   kill(10018, 'tcp').then(console.log).catch(console.log);
+  // }
+  kill(10018, 'tcp').then(console.log).catch(console.log);
+  setTimeout(() => {
     app.quit();
-  }
+  }, 1000);
 });
 
 app.on('will-quit', () => {
