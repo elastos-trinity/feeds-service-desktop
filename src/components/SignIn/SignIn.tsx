@@ -74,7 +74,7 @@ const SignIn = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <h5 className={styles.version}>v2.0.0</h5>
+            <h5 className={styles.version}>v2.0.1</h5>
           </a>
         </Grid>
       </div>
