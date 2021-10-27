@@ -147,9 +147,7 @@ app.on('activate', () => {
 let cmdStr: string;
 if (process.platform === 'win32') {
   const dataPath = `${app.getPath('appData')}\\feeds-service-data`;
-  const joinPath = require('path');
-  const certPath = joinPath.join(app.getAppPath(), '../services/cacert.pem');
-  cmdStr = `feedsd.exe -c feedsd.conf --data-dir=${dataPath} --cacert-dir=${certPath}`;
+  cmdStr = `feedsd.exe -c feedsd.conf --data-dir=${dataPath}`;
 } else {
   cmdStr = './feedsd -c feedsd.conf';
 }
